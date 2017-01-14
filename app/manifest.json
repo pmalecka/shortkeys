@@ -1,6 +1,6 @@
 {
     "name": "__MSG_appName__",
-    "version": "2.0.17",
+    "version": "2.0.19",
     "manifest_version": 2,
     "description": "__MSG_appDescription__",
     "icons": {
@@ -11,11 +11,20 @@
     "default_locale": "en",
     "background": {
         "scripts": [
-            "scripts/chromereload.js",
             "scripts/background.js"
         ]
     },
-    "options_page": "options.html",
+    "options_ui": {
+        "page": "options.html"
+    },
+    "applications": {
+        "gecko": {
+            "id": "Shortkeys@Shortkeys.com",
+            "strict_min_version": "47.0",
+            "strict_max_version": "50.*",
+            "update_url": "https://example.com/updates.json"
+        }
+    },
     "content_scripts": [
         {
             "matches": [
@@ -31,8 +40,9 @@
     ],
     "permissions": [
         "tabs",
+        "activeTab",
+        "downloads",
         "clipboardWrite",
-        "browsingData",
         "storage",
         "bookmarks",
         "<all_urls>"

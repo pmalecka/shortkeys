@@ -78,7 +78,7 @@ app.controller('ShortkeysOptionsCtrl', ['$scope', function($scope) {
 
   // Create the list of bookmarks for selection as an action.
   $scope.bookmarks = [];
-  chrome.bookmarks.getTree(function(results) {
+  browser.bookmarks.getTree().then(function(results) {
     traverseBookmarks(results);
     $scope.bookmarks.sort();
     $scope.bookmarks = $scope.bookmarks.filter(function(n) {
@@ -165,8 +165,8 @@ app.controller('ShortkeysOptionsCtrl', ['$scope', function($scope) {
 
     // Save the settings to Chrome storage sync and localStorage.
     var settings = {keys: $scope.keys};
-    chrome.storage.sync.set(settings, function () {});
-    localStorage.shortkeys = JSON.stringify(settings);
+    browser.storage.local.set(settings);
+    // localStorage.shortkeys = JSON.stringify(settings);
 
     // Add a success messsage, an empty config if needed, and scroll up.
     $scope.alerts = [{ type: 'success', msg: 'Your settings were saved! Remember to reload the window or individual tabs to pick up the changes.'}];
@@ -176,16 +176,17 @@ app.controller('ShortkeysOptionsCtrl', ['$scope', function($scope) {
 
   // Attempt to fetch config from Chrome storage sync, and fall back to localStorage
   // if not found (i.e., if the user never enabled sync in version 1.
-  chrome.storage.sync.get(null, function (response) {
+  browser.storage.local.get().then(function (response) {
     if (response && response.keys) {
       $scope.keys = response.keys;
-    } else {
-      var settingsStr = localStorage.shortkeys;
-      if (settingsStr) {
-        var settings = JSON.parse(settingsStr);
-        $scope.keys = settings.keys || [];
-      }
-    }
+    } 
+    // else {
+    //   var settingsStr = localStorage.shortkeys;
+    //   if (settingsStr) {
+    //     var settings = JSON.parse(settingsStr);
+    //     $scope.keys = settings.keys || [];
+    //   }
+    // }
     $scope.addBlankIfEmpty();
     $scope.$apply();
   });
