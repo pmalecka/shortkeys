@@ -1,6 +1,6 @@
 {
     "name": "__MSG_appName__",
-    "version": "2.0.19",
+    "version": "2.0.17",
     "manifest_version": 2,
     "description": "__MSG_appDescription__",
     "icons": {
@@ -21,8 +21,7 @@
         "gecko": {
             "id": "Shortkeys@Shortkeys.com",
             "strict_min_version": "47.0",
-            "strict_max_version": "50.*",
-            "update_url": "https://example.com/updates.json"
+            "strict_max_version": "50.*"
         }
     },
     "content_scripts": [

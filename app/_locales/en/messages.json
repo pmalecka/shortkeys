@@ -1,10 +1,10 @@
 {
   "appName": {
-    "message": "Shortkeys (Custom Keyboard Shortcuts)",
+    "message": "Shortkeys (Custom Keyboard Shortcuts) for Firefox",
     "description": "The name of the application"
   },
   "appDescription": {
-    "message": "Easily customizable custom keyboard shortcuts for Chrome",
+    "message": "Easily customizable custom keyboard shortcuts for Firefox. Forked from https://github.com/mikecrittenden/chrome-shortkeys/",
     "description": "The description of the application"
   }
 }
