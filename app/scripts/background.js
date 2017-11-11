@@ -124,6 +124,12 @@ browser.runtime.onMessage.addListener(function(request, sender, sendResponse) {
       createNewTab();
     }
   }
+  else if (action === 'newwindow') {
+    browser.windows.create({});
+  }
+  else if (action === 'newprivatewindow') {
+    browser.windows.create({incognito: true});
+  }
   else if (action === 'openbookmark') {
     browser.bookmarks.search({title: request.bookmark}).then(function (nodes) {
       var openNode;
