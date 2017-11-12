@@ -11,6 +11,13 @@ Download it [from Firefox Addons](https://addons.mozilla.org/en-US/firefox/addon
 
 Don't be scared! Setup only takes 2 minutes.
 
+### Dependencies
+
+In order to build the extension, make sure you have `phantomjs` installed globally:
+```
+npm install -g phantomjs
+```
+
 **Step 1: Download and install dependencies**
 
 1. Fork this repo and clone your fork locally.
