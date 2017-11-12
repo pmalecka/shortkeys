@@ -1,5 +1,5 @@
 'use strict';
-/* global Mousetrap */
+/* globals Mousetrap,browser */
 
 var keySettings;
 
@@ -11,7 +11,7 @@ var keySettings;
  */
 var globToRegex = function(glob) {
   // Use a regexp if the url starts and ends with a slash `/`
-  if (/^\/.*\/$/.test(glob)) return new RegExp(glob.replace(/^\/(.*)\/$/, '$1'))
+  if (/^\/.*\/$/.test(glob)) { return new RegExp(glob.replace(/^\/(.*)\/$/, '$1')); }
 
   var specialChars = '\\^$*+?.()|{}[]';
   var regexChars = ['^'];
@@ -178,7 +178,7 @@ var doAction = function(keySetting) {
  */
 var activateKey = function(keySetting) {
   var action = function() {
-    if (!isAllowedSite(keySetting)) return false;
+    if (!isAllowedSite(keySetting)) { return false; }
     doAction(keySetting);
     return false;
   };

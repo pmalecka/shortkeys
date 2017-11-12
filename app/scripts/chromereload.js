@@ -1,4 +1,5 @@
 'use strict';
+/* globals browser */
 
 // Reload client for Chrome Apps & Extensions.
 // The reload client has a compatibility with livereload.

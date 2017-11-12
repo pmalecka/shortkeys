@@ -1,4 +1,5 @@
 'use strict';
+/* globals browser */
 
 function copyToClipboard(text) {
   var copyDiv = document.createElement('div');

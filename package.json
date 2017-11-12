@@ -1,15 +1,20 @@
 {
   "name": "shortkeys-custom-keyboard-shortcuts",
-  "version": "0.0.0",
+  "version": "2.0.21",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pmalecka/chrome-shortkeys"
+  },
   "dependencies": {},
   "devDependencies": {
+    "grunt": "^1.0.1",
     "grunt-wiredep": "^3.0.1",
-    "grunt-bower-install": "^1.6.0",
     "grunt-chrome-manifest": "^0.3.0",
     "grunt-concurrent": "^2.3.1",
     "grunt-contrib-clean": "^1.1.0",
     "grunt-contrib-compass": "^1.1.1",
-    "grunt-contrib-compress": "^1.4.3",
+    "grunt-contrib-compress": "~1.3.0",
     "grunt-contrib-concat": "^1.0.1",
     "grunt-contrib-connect": "^1.0.2",
     "grunt-contrib-copy": "^1.0.0",
@@ -27,6 +32,6 @@
     "time-grunt": "^1.4.0"
   },
   "engines": {
-    "node": ">=0.8.0"
+    "node": ">=0.10.0"
   }
 }

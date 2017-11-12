@@ -1,5 +1,6 @@
 'use strict';
 /* jshint undef: false, unused: false */
+/* globals browser,angular */
 
 var app = angular.module('ShortkeysOptions', ['ui.bootstrap', 'ui.codemirror', 'localytics.directives']);
 
@@ -181,7 +182,7 @@ app.controller('ShortkeysOptionsCtrl', ['$scope', function($scope) {
   browser.storage.local.get().then(function (response) {
     if (response && response.keys) {
       $scope.keys = response.keys;
-    } 
+    }
     // else {
     //   var settingsStr = localStorage.shortkeys;
     //   if (settingsStr) {
