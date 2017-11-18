@@ -11,11 +11,24 @@
     "default_locale": "en",
     "background": {
         "scripts": [
-            "scripts/background.js"
+          "scripts/chromereload.js",
+          "scripts/background.js"
         ]
     },
+    "permissions": [
+        "tabs",
+        "activeTab",
+        "downloads",
+        "clipboardWrite",
+        "storage",
+        "bookmarks",
+        "sessions",
+        "<all_urls>"
+    ],
     "options_ui": {
-        "page": "options.html"
+      "page": "options.html",
+      "browser_style": true,
+      "open_in_tab": false
     },
     "applications": {
         "gecko": {
@@ -28,22 +41,13 @@
             "matches": [
                 "<all_urls>"
             ],
-            "match_about_blank": true,
             "js": [
                 "bower_components/mousetrap/mousetrap.min.js",
                 "scripts/contentscript.js"
             ],
+            "run_at": "document_start",
             "all_frames": true,
-            "run_at": "document_start"
+            "match_about_blank": true
         }
-    ],
-    "permissions": [
-        "tabs",
-        "activeTab",
-        "downloads",
-        "clipboardWrite",
-        "storage",
-        "bookmarks",
-        "<all_urls>"
     ]
 }

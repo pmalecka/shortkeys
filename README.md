@@ -18,7 +18,7 @@ Don't be scared! Setup only takes 2 minutes.
 1. Fork this repo and clone your fork locally.
 2. Open up the root directory in a terminal
 3. Run `npm install` to install the node dependencies
-4. Run `sudo npm install -g grunt` and `sudo npm install -g bower` to install grunt and bower globally
+4. Run `sudo npm install -g gulp` and `sudo npm install -g bower` to install grunt and bower globally
 5. Run `bower install` to install the bower components
 
 **Step 2: Enable the extension and debug**
@@ -33,8 +33,8 @@ Don't be scared! Setup only takes 2 minutes.
 
 **Step 3: Start developing**
 
-1. Run `grunt debug` and confirm that you see something [like this](https://www.dropbox.com/s/eykygm745vilifh/Screenshot%202015-05-18%2015.49.42.png?dl=0). In case the build fails, run `npm rebuild` and try again.
-2. Edit some code. The extension itself does not reload automatically. You need to build and re-load it.
+1. Run `gulp watch`.
+2. Edit some code. The extension itself should reload automatically (thanks Yeoman!).
 3. When you're done with your changes, push them to your fork and create a pull request for them.
-4. You can also run `grunt build` at any time to bump the manifest version and generate a
-   Webstore compatible zip file for upload.
+4. You can also run `gulp build` at any time to generate a distrubution version to `dist/`.
+5. Finally, you can run `gulp package` to generate a compressed version of the extension suitable for uploading to the Webstore.
