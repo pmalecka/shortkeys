@@ -1,7 +1,7 @@
 {
   "name": "shortkeys",
   "private": true,
-  "version": "2.2.5",
+  "version": "2.2.6",
   "description": "Custom keyboard shortcuts for your browser",
   "scripts": {
     "start": "npm run dev:chrome",
@@ -26,12 +26,12 @@
     "babel-cli": "6.x.x",
     "babel-core": "6.x.x",
     "babel-loader": "7.x.x",
-    "babel-preset-env": "1.x.x",
+    "babel-preset-env": "^1.6.1",
     "chai": "4.x.x",
     "chromereload": "0.x.x",
     "debounce": "1.x.x",
     "del": "3.x.x",
-    "gulp": "3.x.x",
+    "gulp": "3.9.0",
     "gulp-bump": "2.x.x",
     "gulp-cache": "0.x.x",
     "gulp-clean-css": "^3.x.x",
@@ -59,7 +59,8 @@
   "dependencies": {
     "angular": "^1.6.7",
     "angular-ui-bootstrap": "^2.5.6",
-    "angular-ui-codemirror": "https://github.com/mikecrittenden/ui-codemirror/tarball/master",
+    "angular-ui-codemirror": "github:mikecrittenden/ui-codemirror",
+    "babel-register": "^6.26.0",
     "bootstrap": "^3.3.7",
     "codemirror": "^5.32.0",
     "mousetrap": "^1.6.1"

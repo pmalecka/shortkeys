@@ -36,7 +36,6 @@ let selectTab = (direction) => {
           break
       }
       chrome.tabs.update(toSelect.id, {active: true})
-      // chrome.tabs.update(currentTab.id, {active: false})
     })
   })
 }
@@ -272,6 +271,8 @@ let handleAction = (action, request = {}) => {
 }
 
 chrome.commands.onCommand.addListener(function (command) {
+  // Remove the integer and hyphen at the beginning.
+  command = command.split('-')[1]
   handleAction(command)
 })
 

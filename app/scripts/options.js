@@ -2,11 +2,11 @@
 /* jshint undef: false, unused: false */
 /* global localStorage */
 
-import angular from 'Angular'
-import CodeMirror from 'CodeMirror'
-import 'CodeMirror/mode/javascript/javascript.js'
-import 'CodeMirror/addon/edit/closebrackets.js'
-import 'CodeMirror/addon/edit/matchbrackets.js'
+import angular from 'angular'
+import CodeMirror from 'codemirror'
+import 'codemirror/mode/javascript/javascript.js'
+import 'codemirror/addon/edit/closebrackets.js'
+import 'codemirror/addon/edit/matchbrackets.js'
 import 'angular-ui-bootstrap'
 import 'angular-ui-codemirror'
 
@@ -75,7 +75,7 @@ app.controller('ShortkeysOptionsCtrl', ['$scope', function ($scope) {
   $scope.isBuiltIn = function (action) {
     for (let i = 0, len = $scope.actionOptions.length; i < len; i++) {
       if ($scope.actionOptions[i].value === action) {
-        //builtin actions do not work in Firefox yet
+        // Firefox doesn't have a UI for keyboard shortcuts yet.
         return ($scope.actionOptions[i].builtin || false) && process.env.VENDOR !== 'firefox'
       }
     }
@@ -199,7 +199,7 @@ app.controller('ShortkeysOptionsCtrl', ['$scope', function ($scope) {
     try {
       let config = JSON.parse($scope.import.text)
       $scope.keys = $scope.keys.concat(config)
-      $scope.saveKeys();
+      $scope.saveKeys()
     } catch (e) {
       $scope.alerts = [{
         type: 'danger',
